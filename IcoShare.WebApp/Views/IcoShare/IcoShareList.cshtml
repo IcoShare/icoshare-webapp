@@ -1,0 +1,88 @@
+﻿@model IEnumerable<IcoShare.WebApp.Models.IcoShareViewModel>
+
+@{
+    ViewBag.Title = "IcoShareList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>IcoShareList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateNewIcoShare")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IcoShareId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TokenScriptHash)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TokenScriptName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TokenScriptWebsite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContributionBundle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinContribution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxContribution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentContribution)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IcoShareId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TokenScriptHash)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TokenScriptName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TokenScriptWebsite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContributionBundle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinContribution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxContribution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentContribution)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
